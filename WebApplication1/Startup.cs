@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Template;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -49,6 +51,25 @@ namespace WebApplication1
 
             app.UseStaticFiles();
 
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+
+            //        name: "latest-products",
+            //        template: "product",
+            //        defaults: new { Controller = "Product", Action = "Mobile" }
+
+            //    );
+            //});
+
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "about-route",
+                    template: "about",
+                    defaults: new { Controller = "Home", Action = "About" });
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

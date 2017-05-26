@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
+    
     public class ProductController : Controller
     {
         public IActionResult Index()
         {
-            @ViewBag.tttt = "aaaa";
             return View();
 
         }
@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        
+
 
     }
 }
